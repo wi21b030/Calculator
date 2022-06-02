@@ -20,4 +20,24 @@ public class CalculatorController {
         return a + b;
     }
 
+    @RequestMapping("/sub")
+    public int sub(@RequestParam int a,@RequestParam int b){
+        return a - b;
+    }
+
+    @RequestMapping("/mul")
+    public int mul(@RequestParam int a,@RequestParam int b){
+        return a * b;
+    }
+
+    @RequestMapping("/div")
+    public int div(@RequestParam int a,@RequestParam int b){
+        if(b != 0){
+            return a / b;
+        }
+        System.out.println("Division durch 0 nicht möglich!");
+        return 0;
+    }
+
+
 }
