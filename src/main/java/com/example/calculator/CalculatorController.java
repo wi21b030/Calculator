@@ -1,8 +1,10 @@
 package com.example.calculator;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class CalculatorController {
@@ -31,12 +33,21 @@ public class CalculatorController {
     }
 
     @RequestMapping("/div")
-    public int div(@RequestParam int a,@RequestParam int b){
+    public String div(@RequestParam int a,@RequestParam int b){
         if(b != 0){
-            return a / b;
+            return String.format("%d", a/b);
         }
-        System.out.println("Division durch 0 nicht möglich!");
-        return 0;
+        return "Division durch 0 nicht möglich";
+    }
+
+    @RequestMapping("/quad")
+    public int quad(@RequestParam int a){
+        return a * a;
+    }
+
+    @RequestMapping("/pow")
+    public int pow(@RequestParam int a,@RequestParam int b){
+        return (int) Math.pow(a,b);
     }
 
 
