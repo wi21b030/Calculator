@@ -50,5 +50,10 @@ public class CalculatorController {
         return (int) Math.pow(a,b);
     }
 
+    @RequestMapping("/abs")
+    public int abs(@RequestParam int a){
+        return Math.abs(a);
+    }
+
 
 }
