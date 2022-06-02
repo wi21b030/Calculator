@@ -13,6 +13,8 @@ public class CalculatorController {
      * @param b int
      * @return a+b
      */
+
+    //localhost:8080/sum?a=5&b=6 so kann man bspw die Funktion im Browser verwenden
     @RequestMapping("/sum")
     public int sum(@RequestParam int a,@RequestParam int b){
         return a + b;
