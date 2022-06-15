@@ -51,7 +51,7 @@ public class CalculatorController {
      * @return
      */
     @RequestMapping("/div")
-    public String div(@RequestParam int a,@RequestParam int b){
+    public int div(@RequestParam int a,@RequestParam int b){
         return calc.div(a,b);
     }
 

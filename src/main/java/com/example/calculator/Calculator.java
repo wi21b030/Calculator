@@ -13,11 +13,11 @@ public class Calculator {
         return a*b;
     }
 
-    public String div(int a, int b){
-        if(b != 0){
-            return String.format("%d", a/b);
+    public int div(int a, int b){
+        if(b == 0){
+            throw new ArithmeticException("Division by Zero Exception!");
         }
-        return "Division durch 0 nicht möglich";
+        return a/b;
     }
 
     public int quad(int a){
