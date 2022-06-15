@@ -44,12 +44,22 @@ class CalculatorTest {
         //Assert
         assertEquals(expected,result);
     }
-    /*
+
+
     @Test
-    void div(){
+    void divTest(){
         int c = 5;
         int d = 0;
-    }*/
+        assertThrows(ArithmeticException.class,() -> calculator.div(c,d));
+    }
+
+    @Test
+    void divTest2(){
+        int c = 10;
+        int d = 2;
+        int expected = 5;
+        assertEquals(expected,calculator.div(c,d));
+    }
     @Test
     void quadTest(){
         int c = 5;
