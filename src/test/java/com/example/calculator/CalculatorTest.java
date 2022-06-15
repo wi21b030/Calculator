@@ -35,6 +35,17 @@ class CalculatorTest {
     }
 
     @Test
+    void subTest2(){
+        int c = 5;
+        int d = 3;
+        int expected = 2;
+        //Act
+        int result = calculator.sub(c,d);
+        //Assert
+        assertEquals(expected,result);
+    }
+
+    @Test
     void mulTest(){
         int c = 5;
         int d = 6;
