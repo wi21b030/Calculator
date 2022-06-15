@@ -30,7 +30,7 @@ public class CalculatorController {
      */
     @RequestMapping("/sub")
     public int sub(@RequestParam int a,@RequestParam int b){
-        return a - b;
+        return calc.sub(a,b);
     }
 
     /**
@@ -41,7 +41,7 @@ public class CalculatorController {
      */
     @RequestMapping("/mul")
     public int mul(@RequestParam int a,@RequestParam int b){
-        return a * b;
+        return calc.mul(a,b);
     }
 
     /**
@@ -52,10 +52,7 @@ public class CalculatorController {
      */
     @RequestMapping("/div")
     public String div(@RequestParam int a,@RequestParam int b){
-        if(b != 0){
-            return String.format("%d", a/b);
-        }
-        return "Division durch 0 nicht möglich";
+        return calc.div(a,b);
     }
 
     /**
@@ -65,7 +62,7 @@ public class CalculatorController {
      */
     @RequestMapping("/quad")
     public int quad(@RequestParam int a){
-        return a * a;
+        return calc.quad(a);
     }
 
     /**
@@ -76,7 +73,7 @@ public class CalculatorController {
      */
     @RequestMapping("/pow")
     public int pow(@RequestParam int a,@RequestParam int b){
-        return (int) Math.pow(a,b);
+        return calc.pow(a,b);
     }
 
     /**
@@ -86,7 +83,7 @@ public class CalculatorController {
      */
     @RequestMapping("/abs")
     public int abs(@RequestParam int a){
-        return Math.abs(a);
+        return calc.abs(a);
     }
 
 
